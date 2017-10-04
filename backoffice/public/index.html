@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>                        
+        <title>Spid - Generatore Metadata</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="theme-color" content="#000000">
+
+        <!--
+                manifest.json provides metadata used when your web app is added to the
+                homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+        -->		
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+        <!--
+                Notice the use of %PUBLIC_URL% in the tags above.
+                It will be replaced with the URL of the `public` folder during the build.
+                Only files inside the `public` folder can be referenced from the HTML.
+
+                Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+                work correctly both with client-side routing and a non-root public URL.
+                Learn how to configure a non-root public URL by running `npm run build`.
+        -->		
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/styles.css">
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/custom.css">	
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/datepicker.min.css">
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/spid.css">
+        <link rel="stylesheet" href="%PUBLIC_URL%/css/font-awesome.min.css" >	
+    </head>
+
+    <body>
+		
+        <noscript>
+        You need to enable JavaScript to run this app.
+        </noscript>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="ValidationFailedModal" tabindex="-1" role="dialog" aria-labelledby="ValidationFailedModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title" id="ValidationFailedModalLabel">Errore compilazione Form</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Chiudi la modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p> Uno o più campi del form non sono stati compilati correttamente. Correggere l'errore e effetuare il download del metadata.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" title="Chiudi la modal">Chiudi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="root"></div>
+        <!--
+                This HTML file is a template.
+                If you open it directly in the browser, you will see an empty page.
+
+                You can add webfonts, meta tags, or analytics to this file.
+                The build step will place the bundled scripts into the <body> tag.
+
+                To begin the development, run `npm start` or `yarn start`.
+                To create a production bundle, use `npm run build` or `yarn build`.
+        -->
+
+
+        <!-- IMPORTANT SCRIPTS -->
+        <script type="text/javascript" src="%PUBLIC_URL%/js/vendor/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="%PUBLIC_URL%/js/vendor/jquery/jquery-migrate.min.js"></script>
+        <script type="text/javascript" src="%PUBLIC_URL%/js/vendor/jquery/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="%PUBLIC_URL%/js/vendor/bootstrap/bootstrap.min.js"></script>
+        <script type="text/javascript" src="%PUBLIC_URL%/js/vendor/moment/moment.min.js"></script>
+        <script type="text/javascript" src="%PUBLIC_URL%/js/vendor/customscrollbar/jquery.mCustomScrollbar.min.js"></script>
+        <!-- END IMPORTANT SCRIPTS -->
+        <!-- THIS PAGE SCRIPTS -->
+        <script type="text/javascript" src="%PUBLIC_URL%/js/vendor/bootstrap-select/bootstrap-select.js"></script>        
+        <script type="text/javascript" src="%PUBLIC_URL%/js/vendor/maskedinput/jquery.maskedinput.min.js"></script>
+        <!-- END THIS PAGE SCRIPTS -->
+        <!-- APP SCRIPTS -->
+        <script type="text/javascript" src="%PUBLIC_URL%/js/app.js"></script>
+        <script type="text/javascript" src="%PUBLIC_URL%/js/app_plugins.js"></script>	
+        <script type="text/javascript" src="%PUBLIC_URL%/js/datepicker.min.js"></script>
+        <script type="text/javascript" src="%PUBLIC_URL%/js/custom.js"></script>	
+
+	</body>
+</html>

@@ -1,0 +1,7 @@
+*.log
+*.log.*
+*.lock
+*.lck
+tmp/*
+repository/logs/*
+/node_modules

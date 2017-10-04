@@ -1,0 +1,7 @@
+.CodeMirror {
+	font-size: 11px;
+}
+
+.app-accordion .open {
+	overflow: visible;
+}

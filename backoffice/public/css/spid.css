@@ -1,0 +1,481 @@
+.app-navigation-horizontal {
+    background: #2D3349;
+    /* border-bottom: 1px solid #292f43; */
+}
+
+.app .app-header.app-header-design-blue {
+    background: #225280;
+    border-bottom: 1px solid #225280;
+}
+
+.app-header.navbar .navbar-brand {
+    background-color: transparent;
+    background-size: auto;
+    background-position: initial; 
+    border-bottom: none;
+}
+
+.app .app-navigation-horizontal nav > ul > li > a {
+    float: left;
+    padding: 10px 20px 12px 15px;
+    line-height: 20px;
+    color: #C5D1CD;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transition: color 100ms linear;
+    -moz-transition: color 100ms linear;
+    -ms-transition: color 100ms linear;
+    -o-transition: color 100ms linear;
+    transition: color 100ms linear;
+}
+
+.app .app-navigation-horizontal nav > ul > li.openable > a {
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 0px;
+    -webkit-border-bottom-left-radius: 0px;
+    -webkit-border-top-left-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 0px;
+    -moz-border-radius-bottomleft: 0px;
+    -moz-border-radius-topleft: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 3px;
+}
+
+.app .app-footer.app-footer-blue {
+    background: #1d456c;
+    color: #E5E5E5;
+    font-size: 13px;
+}
+.app .app-footer.app-footer-blue a {
+    color: #E5E5E5;
+}
+
+.app .label {
+    position: relative;
+    line-height: 14px;
+    padding: 3px 5px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 100ms linear;
+    -moz-transition: all 100ms linear;
+    -ms-transition: all 100ms linear;
+    -o-transition: all 100ms linear;
+    transition: all 100ms linear;
+}
+
+.label-warning {
+    background-color: #f69f00;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.collapse.in {
+    display: block;
+}
+
+.has-success .app-checkbox span:before {
+    border-color: #76AB3C;
+}
+.has-success .app-checkbox span:after {
+    color: #76AB3C;
+}
+.has-warning .app-checkbox span:before {
+    border-color: #F69F00;
+}
+.has-warning .app-checkbox span:after {
+    color: #F69F00;
+}
+.has-error .app-checkbox span:before {
+    border-color: #F04E51;
+}
+.has-error .app-checkbox span:after {
+    color: #F04E51;
+}
+
+.app-checkbox,
+.app-radio {
+    line-height: 20px;
+    margin: 10px 0px;
+    /* float: left; */
+    width: 100%;
+}
+.app-checkbox label,
+.app-radio label {
+    padding-left: 30px;
+    font-weight: 400;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+.app-checkbox label input,
+.app-radio label input {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    z-index: 3;
+    margin: 0px;
+    cursor: pointer;
+}
+.app-checkbox label input:checked + span:after,
+.app-radio label input:checked + span:after {
+    -webkit-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    transform: scale(1, 1);
+}
+.app-checkbox label input:disabled + span,
+.app-radio label input:disabled + span {
+    opacity: 0.5;
+}
+.app-checkbox label span,
+.app-radio label span {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+}
+.app-checkbox label span:before,
+.app-radio label span:before {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #DBE0E4;
+    background: #FFF;
+    content: " ";
+}
+.app-checkbox label span:after,
+.app-radio label span:after {
+    position: absolute;
+    z-index: 2;
+    color: #454545;
+    -webkit-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    transform: scale(0, 0);
+    -webkit-transition: transform 100ms cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -moz-transition: transform 100ms cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -ms-transition: transform 100ms cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    -o-transition: transform 100ms cubic-bezier(0.8, -0.33, 0.2, 1.33);
+    transition: transform 100ms cubic-bezier(0.8, -0.33, 0.2, 1.33);
+}
+.app-checkbox.inline,
+.app-radio.inline {
+    display: inline-block;
+    margin-right: 20px;
+    float: none;
+    width: auto;
+}
+.app-checkbox.inline:last-child,
+.app-radio.inline:last-child {
+    margin-right: 0px;
+}
+.app-checkbox label span:after {
+    content: "\f00c";
+    font-family: "FontAwesome";
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+}
+.app-checkbox.success label {
+    color: #76AB3C;
+}
+.app-checkbox.success label span:before {
+    border-color: #76AB3C;
+}
+.app-checkbox.success label span:after {
+    color: #76AB3C;
+}
+.app-checkbox.warning label {
+    color: #F69F00;
+}
+.app-checkbox.warning label span:before {
+    border-color: #F69F00;
+}
+.app-checkbox.warning label span:after {
+    color: #F69F00;
+}
+.app-checkbox.danger label {
+    color: #F04E51;
+}
+.app-checkbox.danger label span:before {
+    border-color: #F04E51;
+}
+.app-checkbox.danger label span:after {
+    color: #F04E51;
+}
+.input-group .input-group-addon .app-checkbox,
+.input-group .input-group-addon .app-radio {
+    margin: 0px;
+}
+.input-group .input-group-addon .app-checkbox label,
+.input-group .input-group-addon .app-radio label {
+    float: left;
+    padding-left: 20px;
+    margin-top: -10px;
+}
+.table .app-checkbox,
+.table .app-radio {
+    margin: 0px;
+    width: 20px;
+}
+
+.dropdown-menu > li .app-checkbox,
+.dropdown-menu > li .app-radio {
+    float: left;
+    width: auto;
+    margin: 5px 0px;
+}
+
+
+.navbar.navbar-white {
+    background-color: #fff;
+    padding-top: 1em;
+    border:0;
+}
+
+.open > .dropdown-menu {
+    border: 0px;
+}
+
+.open >  .dropdown-toggle {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #fff;
+    color: #2D3349 !important;
+}
+
+.notactivated {
+    display:none;
+}
+
+input:focus:invalid, textarea:focus:invalid { 
+    border-left: 3px solid salmon;
+}
+
+input:focus:valid, textarea:focus:valid  { 
+    border-left: 3px solid palegreen;
+}
+
+input:placeholder, textarea:placeholder
+{
+    border: inherit;
+}
+
+@media (min-width: 1400px){
+.container {
+    width: 1340px;
+    max-width: 100%;
+}
+}
+
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+       -o-transition: opacity .15s linear;
+          transition: opacity .15s linear;
+}
+.fade.in {
+  opacity: 1;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.modal.fade .modal-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate(0, -25%);
+      -ms-transform: translate(0, -25%);
+       -o-transform: translate(0, -25%);
+          transform: translate(0, -25%);
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+       -o-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: 6px;
+  outline: 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+}
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+.modal-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.modal-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.modal-header .close {
+  margin-top: -2px;
+}
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+.modal-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+}
+
+
+.validationfailed{
+    border-color: red;
+   border-style: outset;
+}
+
+.close-button {
+    top:3px;
+    padding-left: 40px;
+}
+
+legend {
+   font-size:  0.875rem;
+}
+
+h1.modal-title {
+    font-size: 2em;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: transparent !important;
+}
+
+.dropdown-item-element{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #263238;
+    text-decoration: none;
+}
+
+.dropdown-item-element:focus, .dropdown-item-element:hover{
+      background-color: #eceff1;
+}
+
+.tooltip-inner {
+            max-width: none;
+            white-space: nowrap;
+        }
+        
+        /* Hide the list on focus of the input field */
+datalist {
+	display: none;
+}
+/* specifically hide the arrow on focus */
+input::-webkit-calendar-picker-indicator {
+	display: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow:none;
+}
+        
