@@ -6,9 +6,9 @@ RUN useradd --user-group --create-home --shell /bin/false yoda
 
 # Update and install utilities
 RUN apt-get update && \
-    apt-get install curl && \
-    apt-get install vi && \
-    apt-get install netstat
+    apt-get install -y curl && \
+    apt-get install -y vim && \
+    apt-get install -y net-tools
 
 # Node 6
 RUN apt-get install -y curl && \
@@ -17,16 +17,15 @@ RUN apt-get install -y curl && \
     apt-get install -y nodejs && \
     apt-get install -y build-essential
 
-# Untar last SPID Test Environment Backoffice release
-RUN apt-get install curl && \
-    mkdir /spid-test-environment && \
-    curl -o /spid-test-environment/spid-testenv-backoffice.tar.gz https://codeload.github.com/umbros/spid-test-environment/tar.gz/v0.9-beta.1 && \
-    mkdir /spid-test-environment/backoffice && \
-    tar -zxvf /spid-test-environment/spid-testenv-backoffice.tar.gz -C /spid-test-environment/backoffice --strip-components=1 && \
-    rm -f spid-test-environment/spid-testenv-backoffice.tar.gz
+# Backoffice
+RUN mkdir /spid-testenvironment && \
+    curl -o /spid-testenvironment/spid-testenv-backoffice.tar.gz https://codeload.github.com/italia/spid-testenv-backoffice/tar.gz/v0.9-beta.1 && \
+    mkdir /spid-testenvironment/bo && \
+    tar -zxvf /spid-testenvironment/spid-testenv-backoffice.tar.gz -C /spid-testenvironment/bo --strip-components=1 && \
+    rm -f /spid-testenvironment/spid-testenv-backoffice.tar.gz
 
-# Build SPID Test Environment Backoffice
-RUN cd /spid-test-environment/backoffice && \
+# Build backoffice
+RUN cd /spid-testenvironment/bo/backoffice && \
     npm install --suppress-warnings && \
     cd server && \
     npm install --suppress-warnings && \
@@ -36,10 +35,10 @@ RUN cd /spid-test-environment/backoffice && \
 # Ports exposed
 EXPOSE 8080
 
-RUN chown -R yoda:yoda /spid-testenv/*
+RUN chown -R yoda:yoda /spid-testenvironment/*
 
 USER yoda
 
-WORKDIR /spid-testenv/bo/backoffice
+WORKDIR /spid-testenvironment/bo/backoffice
 
 ENTRYPOINT ["npm", "run", "start-prod"]
