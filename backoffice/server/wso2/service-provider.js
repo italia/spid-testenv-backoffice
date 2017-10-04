@@ -326,7 +326,8 @@ deleteApplication = function(data, next, nexterr) {
 }
 
 getRoleListOfUser = function(data, next, nexterr) {
-	var url = config.wso2_url + '/services/RemoteUserStoreManagerService?wsdl';			
+	var url = config.wso2_url + '/services/RemoteUserStoreManagerService?wsdl';
+	console.log(url + " usernName=" + data.userName);
 	soap.createClient(url, function(err, client, raw) {
 		if(client==null) { nexterr("Identity Server not available"); return; }
 		if(raw!=null && (raw.indexOf("<faultstring>")>-1)) { nexterr(parseFaultString(raw)); return; }
