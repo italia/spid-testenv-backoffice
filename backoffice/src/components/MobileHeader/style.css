@@ -1,0 +1,13 @@
+.titleTag {
+	margin-left: 110px;
+	font-weight: bold;
+	font-size: 28px;
+	color:#fff;
+}
+.betaTag {
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 16px;
+	font-style: italic;
+	color:#00ee00;
+}

@@ -2,7 +2,7 @@ let state = {
     //_path: "/",
 
     EntityId: "",
-	Id: "",
+		Id: "",
     Certificate: "",
     SingleLogoutServices: [
         {
@@ -32,7 +32,8 @@ let state = {
         Name: "",
         DisplayName: "",
         Url: ""
-    }    
+    },
+		SPIDLevel: 1
 }
 
 export default state;
