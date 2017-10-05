@@ -4,6 +4,7 @@ import Box1Organization from "../Box1Organization";
 import Box1Assertion from "../Box1Assertion";
 import Box1Logout from "../Box1Logout";
 import Box1Attribute from "../Box1Attribute";
+import Box1Options from "../Box1Options";
 import "./style.css";
 
 function view(me) { 
@@ -21,6 +22,7 @@ function view(me) {
                         <Box1Assertion />
                         <Box1Attribute />
                         <Box1Organization />
+												<Box1Options />
                     </div>    
                 </div>
             </div>
