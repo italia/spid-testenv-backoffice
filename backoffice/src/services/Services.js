@@ -42,6 +42,18 @@ class MainService {
 		});
 	} 	
 	
+	saveTestUsers(callback_response, callback_error) {
+		Utility.log(TAG, "GET //user-upload-> ");
+		axios.get('/user-upload')
+		.then(function (response) {
+			Utility.log(TAG, "< ", response);
+			callback_response(response.data);
+		})
+		.catch(function (error) {
+			callback_error((error.response!=null) ? error.response.data : "Service not available");
+		});
+	} 	
+	
 	ping(callback_response, callback_error) {
 		//dummy call only for check status
 		axios.get('/user?applicationName=PING')

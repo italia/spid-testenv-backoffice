@@ -182,9 +182,9 @@ function view(me) {
 												aria-required="true" pattern="M|F"
 												required
 											>
-                                                                                            <option value="M">Maschio</option>
+																																														<option value="N">Non Specificato</option>
+																																														<option value="M">Maschio</option>
                                                                                             <option value="F">Femmina</option>
-                                                                                            <option value="N">Non Specificato</option>
                                                                                         </select>
 										</div>
 										<div className="col-md-2"> 

@@ -17,7 +17,7 @@ class ContentUsers extends Component {
 		expirationDate: "",
 		name: "",
 		familyName: "",
-		gender: "",
+		gender: "N",			// default value
 		dateOfBirth: "",
 		countyOfBirth: "",
 		placeOfBirth: "",
@@ -28,7 +28,7 @@ class ContentUsers extends Component {
 		companyName: "",
 		
 		idCard: "",
-		idCardTypology: "",
+		idCardTypology: "cartaIdentita",		//default value
 		idCardNumber: "",
 		idCardEmitter: "",
 		idCardIssueDate: "",

@@ -89,7 +89,21 @@ exports.saveSP = function(data, callback) {
 	
 	var applicationID = null;
 	var entityId = data.EntityId;
-	var applicationName = entityId.substring(8).replace(/\s+/g, '').toLowerCase();
+	
+	var applicationName = "";
+	console.log(entityId.substring(0,7));
+	if(entityId.substring(0,8)=="https://") {
+		applicationName = entityId.substring(8).replace(/\s+/g, '').toLowerCase();
+	} else if(entityId.substring(0,7)=="http://") {
+		applicationName = entityId.substring(7).replace(/\s+/g, '').toLowerCase();
+	} else {
+		callback({
+			code: 400,
+			message: "Entity ID must start with https:// or http://"
+		});			
+		return;
+	}
+
 	var applicationDescription = data.Organization.DisplayName + ' (' + data.Organization.Url + ')'	
 	var certificateAlias = entityId.substring(8).replace(/\s+/g, '').toLowerCase() + ".crt";
 	
@@ -327,7 +341,6 @@ deleteApplication = function(data, next, nexterr) {
 
 getRoleListOfUser = function(data, next, nexterr) {
 	var url = config.wso2_url + '/services/RemoteUserStoreManagerService?wsdl';
-	console.log(url + " usernName=" + data.userName);
 	soap.createClient(url, function(err, client, raw) {
 		if(client==null) { nexterr("Identity Server not available"); return; }
 		if(raw!=null && (raw.indexOf("<faultstring>")>-1)) { nexterr(parseFaultString(raw)); return; }

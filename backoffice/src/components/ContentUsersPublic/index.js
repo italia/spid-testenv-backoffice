@@ -11,6 +11,7 @@ class ContentUsersPublic extends Component {
 	utilStore = ReduxStore.getUtil();
 	state = {
 		users: [], 
+		testUsersLoaded: false
 	};
 
 	constructor(props) {
@@ -39,6 +40,13 @@ class ContentUsersPublic extends Component {
 				}, ()=>{
 					// state updated
 				});
+				if(response.length>0) {
+					this.setState({
+						testUsersLoaded: true,
+					}, ()=>{
+						// state updated
+					});						
+				}
 			},
 			(error)=> { 
 				this.utilStore.dispatch(Actions_Util.setBlockUI(false));
@@ -51,6 +59,39 @@ class ContentUsersPublic extends Component {
 			}
 		);  
 	}  
+	
+	saveTestUsers() {
+		let service = Services.getMainService();
+		this.utilStore.dispatch(Actions_Util.setBlockUI(true));
+
+		service.saveTestUsers(
+			(response)=> {
+				this.utilStore.dispatch(Actions_Util.setBlockUI(false));
+				this.loadPublicUsers();
+				this.setState({
+					testUsersLoaded: true,
+				}, ()=>{
+					// state updated
+				});				
+			},
+			(error)=> { 
+				this.utilStore.dispatch(Actions_Util.setBlockUI(false));
+				this.loadPublicUsers();
+				this.setState({
+					testUsersLoaded: false,
+				}, ()=>{
+					// state updated
+				});				
+				Utility.showModal({
+					title: "Caricamento utenti test",
+					subtitle: "Si sono verificati errori durante il caricamento",
+					text: error,
+					isOpen: true
+				});				
+				Utility.log("ContentUsersPublic saveTestUsers", "Error", error);
+			}
+		);  
+	}
 
 }
 
