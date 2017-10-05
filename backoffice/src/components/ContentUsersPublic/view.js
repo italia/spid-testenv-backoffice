@@ -8,6 +8,26 @@ function view(me) {
 
 		<div className="container container-boxed">
 	
+			<div className="card"> 
+				<div className="card-header">
+					<span className="card-title">
+						<p>In questa sezione sono elencati gli utenti di test predefiniti.</p>
+						{!me.state.testUsersLoaded ? (
+							<p>Per caricare gli utenti di test fare click cul pulsante <b>"Carica utenti di test"</b></p>		
+						) : ''}
+					</span>
+					{!me.state.testUsersLoaded ? (
+						<div className="panel-elements">
+							<button id="SaveUserButton" className="btn btn-success pull-right"
+								onClick={()=>{ me.saveTestUsers() }}>
+									<span className="fa fa-save"></span>  Carica utenti di test 
+							</button>
+						</div>			
+					) : ''}
+				</div>				
+			</div>
+
+		{me.state.testUsersLoaded ? (
 			<div className="row">
 				<div className="col-md-12">    
 					<div className="card"> 
@@ -49,7 +69,8 @@ function view(me) {
 					</div>
 				</div>
 			</div>
-										
+		) : ''}										
+		
 		</div>
     );
 }

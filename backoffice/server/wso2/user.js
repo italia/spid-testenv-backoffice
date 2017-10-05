@@ -403,6 +403,7 @@ exports.deleteUser = function(data, callback) {
 
 addUser = function(data, next, nexterr) {
 	var url = config.wso2_url + '/services/RemoteUserStoreManagerService?wsdl';
+	console.log(url);
 	soap.createClient(url, function(err, client, raw) {
 		if(client==null) { nexterr("Identity Server not available"); return; }
 		if(raw!=null && (raw.indexOf("<faultstring>")>-1)) { nexterr(parseFaultString(raw)); return; }
@@ -430,6 +431,7 @@ addUser = function(data, next, nexterr) {
 
 deleteUser = function(userName, next, nexterr) {
 	var url = config.wso2_url + '/services/RemoteUserStoreManagerService?wsdl';
+	console.log(url);
 	soap.createClient(url, function(err, client, raw) {
 		if(client==null) { nexterr("Identity Server not available"); return; }
 		if(raw!=null && (raw.indexOf("<faultstring>")>-1)) { nexterr(parseFaultString(raw)); return; }
@@ -450,6 +452,7 @@ deleteUser = function(userName, next, nexterr) {
 
 addUserClaimValue = function(data, next) {
 	var url = config.wso2_url + '/services/RemoteUserStoreManagerService?wsdl';
+	console.log(url);
 	soap.createClient(url, function(err, client) {
 		if(client==null) { nexterr("Identity Server not available"); return; }
 		
@@ -470,6 +473,7 @@ addUserClaimValue = function(data, next) {
 
 getUserListOfRole = function(data, next, nexterr) {
 	var url = config.wso2_url + '/services/RemoteUserStoreManagerService?wsdl';
+	if(data.roleName!="Application/PING") console.log(url + " roleName: " + data.roleName);
 	soap.createClient(url, function(err, client, raw) {
 		if(client==null) { nexterr("Identity Server not available"); return; }
 		if(raw!=null && (raw.indexOf("<faultstring>")>-1)) { nexterr(parseFaultString(raw)); return; }
@@ -506,6 +510,7 @@ getUserListOfRole = function(data, next, nexterr) {
 
 getUserList = function(next, nexterr) {
 	var url = config.wso2_url + '/services/RemoteUserStoreManagerService?wsdl';
+	console.log(url);
 	soap.createClient(url, function(err, client, raw) {
 		if(client==null) { nexterr("Identity Server not available"); return; }
 		if(raw!=null && (raw.indexOf("<faultstring>")>-1)) { nexterr(parseFaultString(raw)); return; }
@@ -543,6 +548,7 @@ getUserList = function(next, nexterr) {
 
 getUserClaimValues = function(data, next, nexterr) {
 	var url = config.wso2_url + '/services/RemoteUserStoreManagerService?wsdl';
+	console.log(url);
 	soap.createClient(url, function(err, client, raw) {
 		if(client==null) { nexterr("Identity Server not available"); return; }
 		if(raw!=null && (raw.indexOf("<faultstring>")>-1)) { nexterr(parseFaultString(raw)); return; }

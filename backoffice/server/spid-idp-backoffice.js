@@ -15,6 +15,7 @@ var https = require('https');
 
 var wso2_sp = require('./wso2/service-provider');
 var wso2_user = require('./wso2/user');
+var wso2_usertest = require('./wso2/user-test');
 
 
 var server_options = {
@@ -197,6 +198,14 @@ app.post('/user-delete', (req, res)=> {
 	wso2_user.deleteUser(req.body, (response)=> {
 		res.status(response.code).send(response.message);
 	});
+});
+
+
+// test users preload
+app.get('/user-upload', (req, res)=> {
+	wso2_usertest.uploadUsers((response)=> {
+		res.status(response.code).send(response.message);
+	});		
 });
 
 
