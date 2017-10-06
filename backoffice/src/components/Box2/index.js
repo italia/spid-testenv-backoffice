@@ -34,7 +34,7 @@ class Box2 extends Component {
 				});        
 				*/
 				
-				window.location = "https://localhost:8080/#/services";
+				window.location = "/#/services";
 
 				Utility.log("Metadata send", "Response", response);
 			},
