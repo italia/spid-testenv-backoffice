@@ -7,18 +7,21 @@ function view(me) {
     return(
 
 		<div className="container container-boxed">
-	
 			<p>
-				<b>Binding POST</b><hr/>
-				Binding: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST<br/>
-				Location: https://localhost:9443/samlsso<br/>
+				<b>Entity ID</b><hr/>
+				&lt;entityID&gt;
+	
+				<br/>
+			</p>	
+			<p>
+				<b>AssertionConsumerService</b><hr/>
+				https://&lt;host_spid_idptest&gt;:&lt;port_spid_idptest&gt;/samlsso
 	
 				<br/>
 			</p>
 			<p>
-				<b>Binding REDIRECT</b><hr/>
-				Binding: urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect<br/>
-				Location: https://localhost:9443/samlsso<br/>
+				<b>SingleLogoutService</b><hr/>
+				https://&lt;host_spid_idptest&gt;:&lt;port_spid_idptest&gt;/samlsso
 	
 				<br/>
 			</p>				
