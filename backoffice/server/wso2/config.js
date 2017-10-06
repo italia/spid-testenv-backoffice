@@ -1,5 +1,5 @@
 const config = {
-	
+
 	wso2_url		: "https://spid-testenv-identityserver:9443",
 	//wso2_url		: "https://localhost:9443",
 	wso2_user		: 'admin',
