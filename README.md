@@ -5,11 +5,11 @@ Consiste in un Identity Provider da far girare in locale o su un proprio server,
 
 L'ambiente si compone di due elementi:
 * l'Identity Server vero e proprio, basato su [WSO2-is](https://github.com/wso2/product-is), [(repository github)](https://github.com/italia/spid-testenv-identityserver);
-* un backoffice web basato su Node.js che offre un'interfaccia semplificata per la configurazione del Service Provider sull'IS e la creazione delle identità [(repository github)](https://github.com/italia/spid-testenvironment-backoffice).
+* un backoffice web basato su Node.js che offre un'interfaccia semplificata per la configurazione del Service Provider sull'IS e la creazione delle identità [(repository github)](https://github.com/italia/spid-testenv-backoffice).
 
 ## Docker
 
-Per l'installazione con Docker fare riferimento al repository [spid-testenvironment](https://github.com/italia/spid-testenvironment)
+Per l'installazione con Docker fare riferimento al repository [spid-testenvironment](https://github.com/italia/spid-testenv-docker)
 
 ## Installazione senza Docker
 
