@@ -12,7 +12,7 @@ class ContentIdentityProvider extends Component {
 	state = {
 		xml: " \n\n\
 		<?xml version=\"1.0\" encoding=\"UTF-8\"?> \n\
-		<EntityDescriptor xmlns=\"urn:oasis:names:tc:SAML:2.0:metadata\" ID=\"_2487e8a5-3a05-488c-8fa6-fe32b8ae96c8\" entityID=\"<entityID>\">  \n\
+		<EntityDescriptor xmlns=\"urn:oasis:names:tc:SAML:2.0:metadata\" ID=\"_2487e8a5-3a05-488c-8fa6-fe32b8ae96c8\" xmlns:saml2=\"urn:oasis:names:tc:SAML:2.0:assertion\" entityID=\"<entityID>\">  \n\
 		  <!-- Per test non viene richiesta la firma del metadata come avverrebbe in produzione --> \n\
 		  <IDPSSODescriptor WantAuthnRequestsSigned=\"true\" protocolSupportEnumeration=\"urn:oasis:names:tc:SAML:2.0:protocol\"> \n\
 			<KeyDescriptor use=\"signing\"> \n\
@@ -34,7 +34,7 @@ class ContentIdentityProvider extends Component {
 				</X509Data> \n\
 			  </KeyInfo> \n\
 			</KeyDescriptor> \n\
-			<SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://<host_spid_idptest>:<port_spid_idptest>/samlsso\" ResponseLocation=\"https://<host_spid_idptest>:<port_spid_idptest>/samlsso/\"> \n\
+			<SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://<host_spid_idptest>:<port_spid_idptest>/samlsso\" ResponseLocation=\"https://<host_spid_idptest>:<port_spid_idptest>/samlsso\"> \n\
 			<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat> \n\
 			<SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://<host_spid_idptest>:<port_spid_idptest>/samlsso\"/> \n\
 			<SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"<host_spid_idptest>:<port_spid_idptest>/samlsso\"/> \n\
