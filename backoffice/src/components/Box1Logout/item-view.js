@@ -18,7 +18,7 @@ function view(me) {
 
             </div>
             <div className="card-body">
-                <form className="form-horizontal" id="service_'+logoutNum+'_logout-container">
+                <form className="form-horizontal" id="service_'+logoutNum+'_logout-container" name="form-logout">
                     <div className="mt-3 container-fluid">
                     <div className="form-group row mt-3">
                         <label htmlFor="singlelogoutbinding" className="col-md-3 control-label">Binding </label>
@@ -33,7 +33,7 @@ function view(me) {
                         </div>
                         <div className="col-md-1"> <i className="fa fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top"aria-hidden="true"  title="Inserisci l'indirizzo della P.A. in https"></i> </div>
                         </div>
-                    <div className="form-group row mt-3">
+                        <div className="form-group row mt-3">
                             <label className="col-md-3 control-label">Location </label>
                                 <div className="col-md-8">
                                     <input type="url" className="form-control" 

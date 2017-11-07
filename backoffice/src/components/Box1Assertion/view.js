@@ -5,7 +5,7 @@ import "./style.css";
 function view(me) { 
     
     return(
-        <div className="card maincard" onChange={()=>{me.onChange()}}>
+        <div className={"card maincard " + me.state.validation} onChange={()=>{me.onChange()}}>
             <a data-toggle="collapse" href="#assertionconsumerservice-container" aria-expanded="true" aria-controls="assertionconsumerservice-container">
                 <div className="card-header" role="tab" id="assertionconsumerservice-header">
                     <div className="title">Assertion Consumer Service</div>

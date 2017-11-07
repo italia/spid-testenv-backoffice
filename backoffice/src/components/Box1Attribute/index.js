@@ -7,11 +7,13 @@ import Utility from "../../util/Utility";
 class Box1Attribute extends Component {
     
   store = ReduxStore.getStore();
+  validation = ReduxStore.getValidation();
 
   constructor(props) {
     super(props);
     this.state = {
       n: 1,		// index 1 because index 0 is for resident sp on wso2
+      validation: "",      
       data: [
         {
           n: 1,	// index 1 because index 0 is for resident sp on wso2
@@ -27,7 +29,12 @@ class Box1Attribute extends Component {
       ]
     }
     this.onChange();
+    this.unsubscribe = this.validation.subscribe(()=>this.onValidation());
   }
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  }  
 
   render() { 
     return view(this); 
@@ -116,6 +123,12 @@ class Box1Attribute extends Component {
       Actions.setAttributeConsumingService(storeData)
     );
   }
+
+  onValidation() {
+    let isValid = this.validation.getState();
+    if(!isValid.attribute) this.setState(Object.assign({}, {validation: "validationfailed"}));
+    else this.setState(Object.assign({}, {validation: "validationok"}));    
+  }  
 }
 
 export default Box1Attribute;

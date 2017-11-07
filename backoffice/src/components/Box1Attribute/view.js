@@ -5,7 +5,7 @@ import "./style.css";
 function view(me) { 
     
     return(
-        <div className="card maincard">
+        <div className={"card maincard " + me.state.validation}>
             <a data-toggle="collapse" href="#attributeconsumingservice-container" aria-expanded="true" aria-controls="attributeconsumingservice-container">
                 <div className="card-header" role="tab" id="attributeconsumingservice-header">
                     <div className="title">Attribute Consuming Service</div>

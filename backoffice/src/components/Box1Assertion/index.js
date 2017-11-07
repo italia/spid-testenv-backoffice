@@ -7,11 +7,13 @@ import Actions from "../../redux/Main/Actions";
 class Box1Assertion extends Component {
 
   store = ReduxStore.getStore();
+  validation = ReduxStore.getValidation();
 
   constructor(props) {
     super(props);
     this.state = {
       n: 0,
+      validation: "",
       data: [
         {
           n: 0,
@@ -27,7 +29,12 @@ class Box1Assertion extends Component {
       ]
     }
     this.onChange();
+    this.unsubscribe = this.validation.subscribe(()=>this.onValidation());
   }    
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  } 
 
   render() { 
     return view(this); 
@@ -114,6 +121,11 @@ class Box1Assertion extends Component {
     );
   }
 
+  onValidation() {
+    let isValid = this.validation.getState();
+    if(!isValid.assertion) this.setState(Object.assign({}, {validation: "validationfailed"}));
+    else this.setState(Object.assign({}, {validation: "validationok"}));    
+  }  
 }
 
 export default Box1Assertion;

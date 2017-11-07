@@ -16,7 +16,7 @@ function view(me) {
             </a>
             <div id="organization-container" className="collapse" role="tabpanel" aria-labelledby="organization-header" data-parent="#accordion" aria-expanded="true" >
                 <div className="card-block">
-                    <form className="form-horizontal">										
+                    <form className="form-horizontal" name="form-organization">										
                         <div className="form-group row mt-3">
                             <label htmlFor="OrganizationName" className="col-md-3 control-label">Name </label>
                             <div className="col-md-8">

@@ -18,14 +18,15 @@ function view(me) {
 		
                 <div className="card-footer">   
                     <div className="panel-elements pull-right">
-                        <button id="SaveMetadataButton" className="btn btn-success pull-right">
+                        <button id="ExportMetadataButton" className="btn btn-success pull-right"
+                            onClick={()=>{ me.export() }}>
                                 <span className="fa fa-download"></span>  Scarica 
                         </button>
                     </div>        
 
 					<div className="panel-elements pull-right">
 						<button id="UploadMetadataButton" className="btn btn-success pull-right"
-							onClick={()=>{ me.validate() }}>
+							onClick={()=>{ me.save() }}>
 								<span className="fa fa-save"></span>  Salva 
 						</button>
 					</div>     
