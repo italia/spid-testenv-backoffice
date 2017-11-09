@@ -15,7 +15,7 @@ Per l'installazione con Docker fare riferimento al repository [spid-testenvironm
 
 ### Prerequisiti
 
-* Node.js e npm
+* Node.js e npm js
 
 ### Configurazione
 
