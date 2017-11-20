@@ -5,11 +5,13 @@ export const SET_INFO_CERTIFICATE = "SET_INFO_CERTIFICATE";
 export const SET_ORGANIZATION_NAME = "SET_ORGANIZATION_NAME";
 export const SET_ORGANIZATION_DISPLAYNAME = "SET_ORGANIZATION_DISPLAYNAME";
 export const SET_ORGANIZATION_URL = "SET_ORGANIZATION_URL";
+export const SET_SPIDLEVEL = "SET_SPIDLEVEL";
 
 /* inner state managed by components */
 export const SET_ASSERTIONCONSUMERSERVICE = "SET_ASSERTIONCONSUMERSERVICE";
 export const SET_SINGLELOGOUT = "SET_SINGLELOGOUT";
 export const SET_ATTRIBUTECONSUMINGSERVICE = "SET_ATTRIBUTECONSUMINGSERVICE";
+
 
 
 class Actions {
@@ -54,7 +56,14 @@ class Actions {
             type: SET_ORGANIZATION_URL,
             value: value
         }
-    }     
+    }   
+		
+    static setSPIDLevel(value) {
+        return {
+            type: SET_SPIDLEVEL,
+            value: value
+        }
+    }		
 
     static setAssertionConsumerService(value) {
         return {

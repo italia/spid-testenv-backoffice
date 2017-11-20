@@ -91,7 +91,6 @@ exports.saveSP = function(data, callback) {
 	var entityId = data.EntityId;
 	
 	var applicationName = "";
-	console.log(entityId.substring(0,7));
 	if(entityId.substring(0,8)=="https://") {
 		applicationName = entityId.substring(8).replace(/\s+/g, '').toLowerCase();
 	} else if(entityId.substring(0,7)=="http://") {
@@ -142,7 +141,8 @@ exports.saveSP = function(data, callback) {
 						"applicationName": applicationName, 
 						"description": applicationDescription,
 						"entityId": entityId,
-						"claims": data.AttributeConsumingServices[0].RequestedAttribute
+						"claims": data.AttributeConsumingServices[0].RequestedAttribute,
+						"SPIDLevel": data.SPIDLevel
 						
 					}, (soapRes) => {
 						
@@ -406,7 +406,7 @@ updateApplication = function(data, next, nexterr) {
 				claimMappings.push(claim);
 			}
 			
-			var args = {
+			var args_level1 = {
 					'serviceProvider': {
 						'applicationID': data.applicationID,
 						'applicationName': data.applicationName,
@@ -432,20 +432,96 @@ updateApplication = function(data, next, nexterr) {
 									'name': 'attrConsumServiceIndex',
 									'value': '1'
 								}
-							},
-							/* ?
+							}
+						},
+						'inboundProvisioningConfig': {
+							'provisioningEnabled': 'false',
+							'provisioningUserStore': 'PRIMARY'
+						},
+						'localAndOutBoundAuthenticationConfig': {
+							'alwaysSendBackAuthenticatedListOfIdPs': 'false',
+							'authenticationType': 'default',
+							'authenticationSteps': [
+								{
+									'stepOrder': 1,
+									'subjectStep': false,
+									'attributeStep': false,
+									'localAuthenticatorConfigs': {
+										'displayName': 'basic',
+										'enabled': 'false',
+										'name': 'BasicAuthenticator',
+										'valid': true
+									},
+								},
+								/*
+								{
+									'stepOrder': 2,
+									'subjectStep': false,
+									'attributeStep': false,
+									'federatedIdentityProviders': {
+										'defaultAuthenticatorConfig': {
+											'displayName': 'Email',
+											'enabled': false,
+											'name': 'EmailOTP',
+											'valid': true
+										},
+										'enable': false,
+										'federatedAuthenticatorConfigs': {
+											'displayName': 'Email',
+											'enabled': false,
+											'name': 'EmailOTP',
+											'valid': true
+										},
+										'federationHub': false,
+										'identityProviderName': 'EmailOTP Provider',
+										'primary': false,
+									}
+								}
+								*/
+							],
+							'authenticationType': 'flow',
+							'enableAuthorization': false,
+							'useTenantDomainInLocalSubjectIdentifier': false,
+							'useUserstoreDomainInLocalSubjectIdentifier': false
+						},
+						'outboundProvisioningConfig': '',
+						'owner': {
+							'tenantDomain': 'carbon.super',
+							'userName': 'admin',
+							'userStoreDomain': 'PRIMARY'
+						},
+						'permissionAndRoleConfig': ''
+					}
+			};				
+			
+			
+			var args_level2 = {
+					'serviceProvider': {
+						'applicationID': data.applicationID,
+						'applicationName': data.applicationName,
+						'claimConfig': {
+							'localClaimDialect': 'false',
+							'alwaysSendMappedLocalSubjectId': 'false',
+							'claimMappings': claimMappings,	
+							'localClaimDialect': 'false',
+							'roleClaimURI': '',
+							'userClaimURI': 'true'
+						},
+						
+						'description': data.description,
+						'saasApp': true,
+						'inboundAuthenticationConfig': {
 							'inboundAuthenticationRequestConfigs': {
 								'friendlyName': '',
 								'inboundAuthKey': data.entityId,
 								'inboundAuthType': 'samlsso',
 								'inboundConfigType': 'standardAPP',
 								'properties': {
-									'displayOrder': '1',
+									'displayOrder': '0',
 									'name': 'attrConsumServiceIndex',
-									'value': '12346'
+									'value': '1'
 								}
-							}					
-							*/
+							}
 						},
 						'inboundProvisioningConfig': {
 							'provisioningEnabled': 'false',
@@ -503,7 +579,11 @@ updateApplication = function(data, next, nexterr) {
 						},
 						'permissionAndRoleConfig': ''
 					}
-			};				
+			};		
+			
+			var args = (data.SPIDLevel=="2")? args_level2 : args_level1;
+			
+			console.log("Saving SP Name: " + data.applicationName + " SPID Level: " + data.SPIDLevel);
 
 			client.updateApplication(args, function(err, result, raw) {
 				if(raw!=null && (raw.indexOf("<faultstring>")>-1)) { nexterr(parseFaultString(raw)); return; }

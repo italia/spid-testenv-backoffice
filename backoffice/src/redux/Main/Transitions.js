@@ -52,7 +52,13 @@ function transitions(state = initialState, action) {
                     Url: action.value
                 }
             });
-            break;            
+            break; 
+
+        case Type.SET_SPIDLEVEL:
+            state = Object.assign({}, state, {
+            		SPIDLevel: action.value
+            });
+            break; 				
             
         case Type.SET_ASSERTIONCONSUMERSERVICE:
             state = Object.assign({}, state, {
