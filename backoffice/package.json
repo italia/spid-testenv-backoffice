@@ -5,7 +5,10 @@
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.18.1",
+    "express-session": "^1.15.6",
     "kendo-ui-react-jquery-datepicker": "^1.0.5",
+    "passport": "^0.4.0",
+    "passport-github2": "^0.1.11",
     "react": "^15.6.1",
     "react-ace": "^5.1.1",
     "react-block-ui": "^1.0.3",

@@ -91,7 +91,7 @@ exports.saveSP = function(data, callback) {
 	var entityId = data.EntityId;
 	
 	var applicationName = "";
-	console.log(entityId.substring(0,7));
+
 	if(entityId.substring(0,8)=="https://") {
 		applicationName = entityId.substring(8).replace(/\s+/g, '').toLowerCase();
 	} else if(entityId.substring(0,7)=="http://") {
@@ -472,20 +472,20 @@ updateApplication = function(data, next, nexterr) {
 									'attributeStep': false,
 									'federatedIdentityProviders': {
 										'defaultAuthenticatorConfig': {
-											'displayName': 'Email',
+											'displayName': 'EmailOTPLoA3',
 											'enabled': false,
-											'name': 'EmailOTP',
+											'name': 'EmailOTPLoA3',
 											'valid': true
 										},
 										'enable': false,
 										'federatedAuthenticatorConfigs': {
-											'displayName': 'Email',
+											'displayName': 'EmailOTPLoA3',
 											'enabled': false,
-											'name': 'EmailOTP',
+											'name': 'EmailOTPLoA3',
 											'valid': true
 										},
 										'federationHub': false,
-										'identityProviderName': 'EmailOTP Provider',
+										'identityProviderName': 'SHARED_EmailOTPLoA3_IDP',
 										'primary': false,
 									}
 								}						
