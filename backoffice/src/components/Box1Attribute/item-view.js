@@ -20,7 +20,7 @@ function view(me) {
                  </div>
             </div>
             <div className="card-body">
-                <form className="form-horizontal" id="service_0_attribute-container">
+                <form className="form-horizontal" id="service_0_attribute-container" name="form-attribute">
                 <div className="mt-3 container-fluid">
                     <div className="form-group row">
                         <label htmlFor="ServiceName" className="col-md-3 control-label">Name </label>

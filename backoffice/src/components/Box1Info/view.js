@@ -4,7 +4,7 @@ import "./style.css";
 function view(me) { 
 
     return(
-        <div className="card maincard">
+        <div className={"card maincard " + me.state.validation}>
             <a data-toggle="collapse" href="#info-container" aria-expanded="true" aria-controls="info-container">
                 <div className="card-header" role="tab" id="info-header">
                     Info
@@ -12,7 +12,7 @@ function view(me) {
             </a>
             <div id="info-container" className="collapse" role="tabpanel" aria-labelledby="info-header" data-parent="#accordion" aria-expanded="true">
                 <div className="card-block">
-                    <form className="form-horizontal">
+                    <form className="form-horizontal" name="form-info">
                         <div className="form-group row mt-3">
                             <label className="col-md-3 control-label">Entity ID </label>
                             <div className="col-md-8">

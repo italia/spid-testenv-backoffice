@@ -19,22 +19,22 @@ function view(me) {
              </div>
             </div>
             <div className="card-block">    
-                <form className="form-horizontal">
+                <form className="form-horizontal" name="form-assertion">
                 <div className="form-group row mt-3">
-                 <div className="form-check form-check-inline col-md-11">
-                    <span className="app-checkbox"> 
-                        <label htmlFor="defaultselector">
-                            <input type="radio" 
-                                name="services-default"
-                                id="defaultselector"
-                                checked={me.data.IsDefault}
-                                onChange={()=>me.data.setDefault(me.data.n)}
-                            /> Default
-                        </label> 
-                    </span>															
-                </div>
-        <div className="col-md-1"> <i className="fa fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top"aria-hidden="true" title = "Deve essere presente uno ed un solo Assertion Consumer Service impostato come Default"></i> </div>
-        </div>
+                    <div className="form-check form-check-inline col-md-11">
+                        <span className="app-checkbox"> 
+                            <label htmlFor="defaultselector">
+                                <input type="radio" 
+                                    name="services-default"
+                                    id="defaultselector"
+                                    checked={me.data.IsDefault}
+                                    onChange={()=>me.data.setDefault(me.data.n)}
+                                /> Default
+                            </label> 
+                        </span>															
+                    </div>
+                    <div className="col-md-1"> <i className="fa fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top"aria-hidden="true" title = "Deve essere presente uno ed un solo Assertion Consumer Service impostato come Default"></i> </div>
+                    </div>
                     <div className="form-group row mt-3">
                         <label htmlFor="assertionbinding" className="col-md-3 control-label">Binding </label>
                         <div className="col-md-8">
