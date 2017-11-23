@@ -118,14 +118,14 @@ function view(me) {
 													}}
 													
 													events = {{
-														change: (e)=>{ me.setDateOfBirth(e.sender.element[0].value); } 
+														change: (e)=>{ me.setExpirationDate(e.sender.element[0].value); } 
 													}}
 													
 												>
 													<input id="ExpirationDate"
 														className="form-control"
 														style={{width: '100%'}}
-														value = {me.state.dateOfBirth}
+														value = {me.state.expirationDate}
 														placeholder = "Scad. identità digitale nel formato AAAA-MM-GG"
 														aria-required="true" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"		
 														required
@@ -400,14 +400,14 @@ function view(me) {
 													}}
 													
 													events = {{
-														change: (e)=>{ me.setDateOfBirth(e.sender.element[0].value); } 
+														change: (e)=>{ me.setIDCardIssueDate(e.sender.element[0].value); } 
 													}}
 													
 												>
 													<input id="IDCardIssueDate"
 														className="form-control"
 														style={{width: '100%'}}
-														value = {me.state.dateOfBirth}
+														value = {me.state.idCardIssueDate}
 														placeholder = "Data emissione nel formato AAAA-MM-GG"
 														aria-required="true" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"		
 														required
@@ -430,14 +430,14 @@ function view(me) {
 													}}
 													
 													events = {{
-														change: (e)=>{ me.setDateOfBirth(e.sender.element[0].value); } 
+														change: (e)=>{ me.setIDCardExpirationDate(e.sender.element[0].value); } 
 													}}
 													
 												>
 													<input id="IDCardExpirationDate"
 														className="form-control"
 														style={{width: '100%'}}
-														value = {me.state.dateOfBirth}
+														value = {me.state.idCardExpirationDate}
 														placeholder = "Data scadenza nel formato AAAA-MM-GG"
 														aria-required="true" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"		
 														required
