@@ -92,11 +92,11 @@ class ContentIdentityProvider extends Component {
 				</ds:X509Data> \n\
 			</ds:KeyInfo> \n\
 		</md:KeyDescriptor> \n\
-		<md:SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://idp.spid.gov.it:9443/samlsso\" ResponseLocation=\"https://idp.spid.gov.it:9443/samlsso\"/> \n\
-		<md:SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://idp.spid.gov.it:9443/samlsso\" ResponseLocation=\"https://idp.spid.gov.it:9443/samlsso\"/> \n\
+		<md:SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://spid-testenv-identityserver:9443/samlsso\" ResponseLocation=\"https://spid-testenv-identityserver:9443/samlsso\"/> \n\
+		<md:SingleLogoutService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://spid-testenv-identityserver:9443/samlsso\" ResponseLocation=\"https://spid-testenv-identityserver:9443/samlsso\"/> \n\
 		<md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat> \n\
-		<md:SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://idp.spid.gov.it:9443/samlsso\"/> \n\
-		<md:SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://idp.spid.gov.it:9443/samlsso\"/> \n\
+		<md:SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" Location=\"https://spid-testenv-identityserver:9443/samlsso\"/> \n\
+		<md:SingleSignOnService Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect\" Location=\"https://spid-testenv-identityserver:9443/samlsso\"/> \n\
 		<saml2:Attribute xmlns:saml2=\"urn:oasis:names:tc:SAML:2.0:assertion\" Name=\"spidCode\" NameFormat=\"xsi:string\"/> \n\
 		<saml2:Attribute xmlns:saml2=\"urn:oasis:names:tc:SAML:2.0:assertion\" Name=\"name\" NameFormat=\"xsi:string\"/> \n\
 		<saml2:Attribute xmlns:saml2=\"urn:oasis:names:tc:SAML:2.0:assertion\" Name=\"familyName\" NameFormat=\"xsi:string\"/> \n\
