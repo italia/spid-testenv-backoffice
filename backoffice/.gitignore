@@ -22,3 +22,4 @@ yarn-debug.log*
 yarn-error.log*
 
 /certs/ca-crt.srl
+/public/assets/idp-metadata.xml
