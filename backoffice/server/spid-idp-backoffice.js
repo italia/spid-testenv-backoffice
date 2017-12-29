@@ -19,8 +19,8 @@ var wso2_usertest = require('./wso2/user-test');
 
 
 var server_options = {
-    cert: fs.readFileSync('certs/client-crt.pem'),
-    key: fs.readFileSync('certs/client-key.pem'),
+    cert: fs.readFileSync('certs/spid-testenv-identityserver-crt.pem'),
+    key: fs.readFileSync('certs/spid-testenv-identityserver-key.pem'),
     ca: fs.readFileSync('certs/ca-crt.pem'),
 	requestCert: false, 
 	rejectUnauthorized: false
@@ -28,8 +28,8 @@ var server_options = {
 
 /*
 var client_options = {
-	cert: fs.readFileSync('certs/client-crt.pem'),
-	key: fs.readFileSync('certs/client-key.pem'),
+    cert: fs.readFileSync('certs/spid-testenv-identityserver-crt.pem'),
+    key: fs.readFileSync('certs/spid-testenv-identityserver-key.pem'),
 	ca: fs.readFileSync('certs/ca-crt.pem'),
 };
 */
