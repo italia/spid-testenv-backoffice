@@ -46,7 +46,7 @@ function view(me) {
                                     className="form-control" 
                                     onChange={(e)=>{ me.setUrl(e) }}
                                          placeholder = "Inserisci URL. Es. https://www.example.com"
-                                    aria-required="true" pattern="https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,63}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
+                                    aria-required="true" pattern="https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}(\.[a-z]{2,63})?\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
                                 />
                             </div>
                             <div className="col-md-1"> <i className="fa fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top"aria-hidden="true"  data-original-title="Inserisci la URL del sito istituzionale della P.A. (in https)"   title="Inserisci l'indirizzo della P.A. (in https)"></i> </div>

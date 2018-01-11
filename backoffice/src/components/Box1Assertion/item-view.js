@@ -54,7 +54,7 @@ function view(me) {
                                 value={me.data.Location} 
                                 onChange={(e)=>me.data.setLocation(me.data.n, e)}
                                     placeholder = "Inserisci URL. Es. https://www.example.com"
-                                    aria-required="true" pattern="https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,63}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
+                                    aria-required="true" pattern="https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}(\.[a-z]{2,63})?\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
                            required />
                         </div>
                         <div className="col-md-1"> <i className="fa fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top"aria-hidden="true" title = "Inserisci la URL (in https) a cui inviare il messaggio di risposta alla richiesta di autenticazione" ></i> </div>
