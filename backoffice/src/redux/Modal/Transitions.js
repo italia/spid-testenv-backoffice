@@ -12,7 +12,8 @@ function transitions(state = initialState, action) {
                 subtitle: action.value.subtitle,
                 text: action.value.text,
                 isOpen: action.value.isOpen,
-				callbackOk: action.value.callbackOk
+                callbackOk: action.value.callbackOk,
+                okLabel: action.value.okLabel
             });
             break;     
             

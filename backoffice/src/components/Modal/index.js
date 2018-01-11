@@ -14,7 +14,8 @@ class Modal extends Component {
 		subtitle: "subtitle",
 		text: "test",
 		isOpen: false,
-		callbackOk: null  
+		callbackOk: null,
+		okLabel: "Cancella"
 	};
 
 	constructor(props) {
@@ -63,7 +64,8 @@ class Modal extends Component {
 			subtitle: newState.subtitle,
 			text: newState.text,
 			isOpen: newState.isOpen,
-			callbackOk: newState.callbackOk
+			callbackOk: newState.callbackOk,
+			okLabel: newState.okLabel
 		}, ()=>{
 			// state updated
 		});

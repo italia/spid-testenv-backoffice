@@ -29,7 +29,8 @@ class Utility {
                 subtitle: data.subtitle,
                 text: JSON.stringify(data.text),
                 isOpen: data.isOpen,
-				callbackOk: data.callbackOk
+                callbackOk: data.callbackOk,
+                okLabel: data.okLabel
             })
         );        
     }

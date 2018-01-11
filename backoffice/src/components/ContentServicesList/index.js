@@ -73,7 +73,8 @@ class ContentServicesList extends Component {
 					}
 				);				
 
-			}
+			},
+			okLabel: "Cancella"
 		});
 	}
 	

@@ -3,7 +3,8 @@ let state = {
     subtitle: "",
     text: "",
     isOpen: false,
-	callbackOk: null
+    callbackOk: null,
+    okLabel: "OK"
 }
 
 export default state;

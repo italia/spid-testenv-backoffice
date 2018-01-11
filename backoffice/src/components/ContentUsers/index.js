@@ -267,7 +267,8 @@ class ContentUsers extends Component {
 					}
 				);				
 
-			}
+			},
+			okLabel: "Cancella"
 		}); 
 	}
 	
