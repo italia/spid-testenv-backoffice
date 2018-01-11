@@ -20,7 +20,7 @@ function view(me) {
                                     className="form-control" 
                                     onChange={(e)=>{ me.setEntityId(e) }} 
                                     placeholder = "Inserisci URL. Es. https://www.example.com"
-                                    aria-required="true" pattern="https://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
+                                    aria-required="true" pattern="https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,63}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)"
                                 required
                                 />
                             </div>
