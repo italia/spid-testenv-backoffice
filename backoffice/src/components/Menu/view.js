@@ -25,7 +25,7 @@ function view(me) {
 								<div className="dropdown-menu noborder" aria-labelledby="MetadataMenu">
 									<div className="dropdown-item" >
 										&nbsp;&nbsp;&nbsp;<Link to="/" className="dropdown-item-element">Creazione Metadata</Link>                                    
-										&nbsp;&nbsp;&nbsp;<Link to="/services" className="dropdown-item-element">Servizi registrati</Link>                                    
+										&nbsp;&nbsp;&nbsp;<Link to="/services" className="dropdown-item-element">Service Provider registrati</Link>                                    
 									</div>
 								</div>
 							</li>

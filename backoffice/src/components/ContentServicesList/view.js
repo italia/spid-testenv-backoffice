@@ -13,13 +13,13 @@ function view(me) {
 					<div className="card"> 
 						<div className="panel panel-default" id="service_0">
 							<div className="card-header">
-								<span className="card-title"><span className="fa fa-refresh fa-fw"></span> Lista servizi</span>
+								<span className="card-title"><span className="fa fa-refresh fa-fw"></span> Lista Service Provider</span>
 							</div>
 							<div className="card-block">  
 								<table className="table table-striped">
 									<thead>
 										<tr>
-											<th>Service Provider Name</th>
+											<th>Issuer</th>
 											<th>Description</th>
 											<th></th>
 										</tr>
@@ -27,7 +27,7 @@ function view(me) {
 									<tbody>
 										{me.state.services.map((item, index)=>(
 											<tr>
-												<td>{item.applicationName}</td>
+												<td>{item.issuer}</td>
 												<td>{item.description}</td>
 												<td>
 													<button className="btn btn-success pull-right" onClick={()=>{ me.delete(item.applicationName) }}>

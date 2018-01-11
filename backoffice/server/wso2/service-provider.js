@@ -28,9 +28,10 @@ exports.getSP = function(data, callback) {
 					applicationList.push({
 						applicationID: application.applicationID,
 						applicationName: application.applicationName,
-						description: application.description
+						description: application.description,
+						issuer: application.issuer
 					});
-					
+
 					if(++processed == roleList.length) {
 						callback({
 							code: 200,
@@ -311,7 +312,8 @@ getApplication = function(data, next, nexterr) {
 						next({
 							applicationID: result.getApplicationResponse.return.applicationID,
 							applicationName: result.getApplicationResponse.return.applicationName,
-							description: result.getApplicationResponse.return.description
+							description: result.getApplicationResponse.return.description,
+							issuer: result.getApplicationResponse.return.inboundAuthenticationConfig.inboundAuthenticationRequestConfigs[0].inboundAuthKey
 						});
 					}
 				}
