@@ -211,6 +211,6 @@ app.get('/user-upload', (req, res)=> {
 
 
 https.createServer(server_options, app).listen(8080, function () {
-	console.log("\nSPID IDP BackOffice Client Running\nversion: 1.3\n");
+	console.log("\nSPID IDP BackOffice Client Running\nversion: 1.4\n");
 });
 

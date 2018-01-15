@@ -37,6 +37,18 @@ class Utility {
 
     static json2metadata(json) {
 
+        let order = 1;
+        let assertionArray = [];
+        for(var i in json.AssertionConsumerServices) {
+            if(json.AssertionConsumerServices[i].IsDefault) {
+                assertionArray[0] = json.AssertionConsumerServices[i];
+            } else {
+                assertionArray[order++] = json.AssertionConsumerServices[i];
+            }  
+        }
+        json.AssertionConsumerServices = assertionArray;
+
+
 // eslint-disable-next-line
 let metadata = '\
 <?xml version="1.0"?> \n\
