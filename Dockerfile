@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get install -y curl && \
     apt-get install -y vim && \
     apt-get install -y net-tools && \
-    apt-get install -y wget unzip libxml2-utils
+    apt-get install -y unzip libxml2-utils
 
 # Node 6
 RUN apt-get install -y curl && \
@@ -32,7 +32,7 @@ RUN cd /spid-testenvironment/bo/backoffice && \
     npm install --suppress-warnings && \
     cd .. && \
     cd idp_metadata && \
-    wget --no-verbose --output-document=xmlsectool-2.0.0-bin.zip https://shibboleth.net/downloads/tools/xmlsectool/2.0.0/xmlsectool-2.0.0-bin.zip && \
+    curl -o xmlsectool-2.0.0-bin.zip https://shibboleth.net/downloads/tools/xmlsectool/2.0.0/xmlsectool-2.0.0-bin.zip && \
     unzip xmlsectool-2.0.0-bin.zip && \
     rm xmlsectool-2.0.0-bin.zip && \
     cd .. && \
