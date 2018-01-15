@@ -34,7 +34,7 @@ try {
     var spawnResult;
     process.stdout.write('Signing metadata... ');
     spawnResult = spawnSync(
-        './xmlsectool/xmlsectool.sh',
+        './xmlsectool-2.0.0/xmlsectool.sh',
         ['--sign', '--inFile', 'metadata-unsigned.xml', '--certificate', '../certs/spid-testenv-identityserver-crt.pem', '--key', '../certs/spid-testenv-identityserver-key.pem', '--outFile', '../public/assets/idp-metadata.xml'],
         {
             cwd: __dirname,
@@ -68,4 +68,3 @@ try {
     } catch (e) {
     }
 }
-// xmlsectool.sh --sign --inFile metatataUnsigned --certificate cert.pem --key key.pem --outFile metadataSigned --verbose
