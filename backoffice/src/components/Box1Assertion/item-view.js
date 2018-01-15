@@ -42,7 +42,6 @@ function view(me) {
                                 value={me.data.Binding}
                                 onChange={(e)=>me.data.setBinding(me.data.n, e)}>
                                     <option selected>HTTP-POST</option>
-                                    <option>HTTP-REDIRECT</option>
                             </select>
                         </div>
                         <div className="col-md-1"> <i className="fa fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top"aria-hidden="true" title = " Selezionare il protocollo di trasporto (binding) da utilizzare per la comunicazione con l'IdP"></i> </div>
