@@ -31,11 +31,11 @@ RUN cd /spid-testenvironment/bo/backoffice && \
     cd server && \
     npm install --suppress-warnings && \
     cd .. && \
-	cd idp_metadata && \
-	wget --no-verbose --output-document=xmlsectool-2.0.0-bin.zip https://shibboleth.net/downloads/tools/xmlsectool/2.0.0/xmlsectool-2.0.0-bin.zip && \
-	unzip xmlsectool-2.0.0-bin.zip && \
-	rm xmlsectool-2.0.0-bin.zip && \
-	cd .. && \
+    cd idp_metadata && \
+    wget --no-verbose --output-document=xmlsectool-2.0.0-bin.zip https://shibboleth.net/downloads/tools/xmlsectool/2.0.0/xmlsectool-2.0.0-bin.zip && \
+    unzip xmlsectool-2.0.0-bin.zip && \
+    rm xmlsectool-2.0.0-bin.zip && \
+    cd .. && \
     npm run build-metadata \
     npm run build
 
