@@ -1,0 +1,16 @@
+1. Generate the CA key
+openssl genrsa -out ca-key.pem 2048
+
+2. Generate the CA certificate
+openssl req -x509 -new -nodes -key ca-key.pem -sha256 -days 3650 -out ca-crt.pem -subj "/C=IT/ST=Rome/L=Rome/O=AgID/OU=Test Certification Authority/CN=AgID"
+
+3. Generate the https private key
+openssl genrsa -out spid-testenv-identityserver-key.pem 2048
+
+4. Generate the https CSR
+openssl req -new -key spid-testenv-identityserver-key.pem -out spid-testenv-identityserver-csr.pem -subj "/C=IT/ST=Rome/L=Rome/O=AgID/OU=SPID Test Server/CN=spid-testenv-identityserver"
+
+5. Generate the https certificate
+openssl x509 -req -in spid-testenv-identityserver-csr.pem -CA ca-crt.pem -CAkey ca-key.pem -CAcreateserial -out spid-testenv-identityserver-crt.pem -days 3650 -sha256
+
+6. Delete the https CSR (spid-testenv-identityserver-csr.pem)

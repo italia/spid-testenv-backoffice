@@ -20,3 +20,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/idp_metadata/xmlsectool-2.0.0-bin.zip
+/idp_metadata/xmlsectool-2.0.0/
+/certs/ca-crt.srl
+/public/assets/idp-metadata.xml

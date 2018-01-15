@@ -8,7 +8,8 @@ RUN useradd --user-group --create-home --shell /bin/false yoda
 RUN apt-get update && \
     apt-get install -y curl && \
     apt-get install -y vim && \
-    apt-get install -y net-tools
+    apt-get install -y net-tools && \
+    apt-get install -y unzip libxml2-utils
 
 # Node 6
 RUN apt-get install -y curl && \
@@ -30,6 +31,12 @@ RUN cd /spid-testenvironment/bo/backoffice && \
     cd server && \
     npm install --suppress-warnings && \
     cd .. && \
+    cd idp_metadata && \
+    curl -o xmlsectool-2.0.0-bin.zip https://shibboleth.net/downloads/tools/xmlsectool/2.0.0/xmlsectool-2.0.0-bin.zip && \
+    unzip xmlsectool-2.0.0-bin.zip && \
+    rm xmlsectool-2.0.0-bin.zip && \
+    cd .. && \
+    npm run build-metadata && \
     npm run build
 
 # Ports exposed

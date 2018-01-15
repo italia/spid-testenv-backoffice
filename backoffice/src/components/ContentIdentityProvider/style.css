@@ -2,6 +2,11 @@
     padding:10px;
 }
 
+#MetadataLink
+{
+	padding: 0 10px 10px 10px;
+}
+
 .ace_editor {
     width:100%!important;
 }
