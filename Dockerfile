@@ -36,7 +36,7 @@ RUN cd /spid-testenvironment/bo/backoffice && \
     unzip xmlsectool-2.0.0-bin.zip && \
     rm xmlsectool-2.0.0-bin.zip && \
     cd .. && \
-    npm run build-metadata \
+    npm run build-metadata && \
     npm run build
 
 # Ports exposed
