@@ -311,7 +311,8 @@ getApplication = function(data, next, nexterr) {
 				} else {
 					if(result.getApplicationResponse!=null && result.getApplicationResponse.return!=null) {
 						var issuerConfig = result.getApplicationResponse.return.inboundAuthenticationConfig;
-						var issuer = (issuerConfig.inboundAuthenticationRequestConfigs!=null && issuerConfig.inboundAuthenticationRequestConfigs.length>0) ? inboundAuthenticationRequestConfigs[0].inboundAuthKey : "";
+						var issuer = (issuerConfig.inboundAuthenticationRequestConfigs!=null && issuerConfig.inboundAuthenticationRequestConfigs.length>0) ? 
+							issuerConfig.inboundAuthenticationRequestConfigs[0].inboundAuthKey : "";
 									
 						next({
 							applicationID: result.getApplicationResponse.return.applicationID,
