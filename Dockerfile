@@ -18,6 +18,17 @@ RUN apt-get install -y curl && \
     apt-get install -y nodejs && \
     apt-get install -y build-essential
 
+# Oracle Java 8
+RUN apt-get install -y software-properties-common python-software-properties && \
+    add-apt-repository --yes ppa:webupd8team/java && \
+    apt-get update && \
+    echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
+    apt-get install -y oracle-java8-installer && \
+    apt-get install oracle-java8-set-default && \
+    rm -rf /var/cache/oracle-jdk8-installer
+
+ENV JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+
 # Backoffice
 RUN mkdir /spid-testenvironment && \
     curl -o /spid-testenvironment/spid-testenv-backoffice.tar.gz https://codeload.github.com/italia/spid-testenv-backoffice/tar.gz/master && \
