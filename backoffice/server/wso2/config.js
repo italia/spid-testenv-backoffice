@@ -1,7 +1,8 @@
 const config = {
 
-	wso2_url		: "https://spid-testenv-identityserver:9443",
+	//wso2_url		: "https://spid-testenv-identityserver:9443",
 	//wso2_url		: "https://localhost:9443",
+	wso2_url		: "https://91.206.129.135:9443",
 	wso2_user		: 'admin',
 	wso2_pass 	: 'admin',
 	import_path	: 'import/spid-users.json'

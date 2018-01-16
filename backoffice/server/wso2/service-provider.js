@@ -301,19 +301,23 @@ getApplication = function(data, next, nexterr) {
 			
 			var args = {
 					'applicationName': data.applicationName
-			};				
+			};		
 			client.getApplication(args, function(err, result, raw) {
+				if(result==null) { nexterr(err); return; }
 				if(result!=null 
 					&& result.IdentityApplicationManagementServiceIdentityApplicationManagementException!=null
 					&& result.IdentityApplicationManagementServiceIdentityApplicationManagementException.IdentityApplicationManagementException!=null) {
 						nexterr(result.IdentityApplicationManagementServiceIdentityApplicationManagementException.IdentityApplicationManagementException.message);
 				} else {
 					if(result.getApplicationResponse!=null && result.getApplicationResponse.return!=null) {
+						var issuerConfig = result.getApplicationResponse.return.inboundAuthenticationConfig;
+						var issuer = (issuerConfig.inboundAuthenticationRequestConfigs!=null && issuerConfig.inboundAuthenticationRequestConfigs.length>0) ? inboundAuthenticationRequestConfigs[0].inboundAuthKey : "";
+									
 						next({
 							applicationID: result.getApplicationResponse.return.applicationID,
 							applicationName: result.getApplicationResponse.return.applicationName,
 							description: result.getApplicationResponse.return.description,
-							issuer: result.getApplicationResponse.return.inboundAuthenticationConfig.inboundAuthenticationRequestConfigs[0].inboundAuthKey
+							issuer: issuer
 						});
 					}
 				}
