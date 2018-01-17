@@ -22,11 +22,17 @@ Per l'installazione con Docker fare riferimento al repository [spid-testenvironm
 ### Configurazione
 
 ```
-$ cd backoffice/spid-idp-backoffice
+$ cd backoffice
 $ npm install
 $ cd server
 $ npm install
 $ cd ..
+$ cd idp_metadata
+$ curl -o xmlsectool-2.0.0-bin.zip https://shibboleth.net/downloads/tools/xmlsectool/2.0.0/xmlsectool-2.0.0-bin.zip
+$ unzip xmlsectool-2.0.0-bin.zip
+$ rm xmlsectool-2.0.0-bin.zip
+$ cd ..
+$ npm run build-metadata
 $ npm run build
 ```
 
@@ -35,7 +41,7 @@ $ npm run build
 Per lanciare l'interfaccia di backoffice procedere come segue:
 
 ```
-$ cd backoffice/spid-idp-backoffice
+$ cd backoffice
 $ npm run start-prod
 ```
 
