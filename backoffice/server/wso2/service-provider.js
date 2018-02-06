@@ -108,49 +108,58 @@ exports.saveSP = function(data, callback) {
 	var applicationDescription = data.Organization.DisplayName + ' (' + data.Organization.Url + ')'	
 	var certificateAlias = entityId.substring(8).replace(/\s+/g, '').toLowerCase() + ".crt";
 	
-	createApplication({
+	deleteApplication({
 		
-		"applicationName": applicationName, 
-		"description": applicationDescription
+		"applicationName": applicationName
 		
-	}, () => {
-		
-		importCertToStore({
+	}, () => {		
+		createApplication({
 			
-			"fileName": certificateAlias,
-			"fileData": data.Certificate
+			"applicationName": applicationName, 
+			"description": applicationDescription
 			
 		}, () => {
-
-			addRPServiceProvider({
+			importCertToStore({
 				
-				"assertionConsumerServices": data.AssertionConsumerServices,
-				"singleLogoutServices": data.SingleLogoutServices,
-				"entityId": entityId,
-				"certificateAlias": certificateAlias
+				"fileName": certificateAlias,
+				"fileData": data.Certificate
 				
 			}, () => {
-
-				getApplication({
+				addRPServiceProvider({			
 					
-					"applicationName": applicationName
+					"assertionConsumerServices": data.AssertionConsumerServices,
+					"singleLogoutServices": data.SingleLogoutServices,
+					"entityId": entityId,
+					"certificateAlias": certificateAlias
 					
-				}, (app) => {
-
-					updateApplication({
+				}, () => {
+					getApplication({
 						
-						"applicationID": app.applicationID, 
-						"applicationName": applicationName, 
-						"description": applicationDescription,
-						"entityId": entityId,
-						"claims": data.AttributeConsumingServices[0].RequestedAttribute
+						"applicationName": applicationName
 						
-					}, (soapRes) => {
-						
-						callback({
-							code: 200,
-							message: "Ok"
-						});
+					}, (app) => {
+						updateApplication({
+							
+							"applicationID": app.applicationID, 
+							"applicationName": applicationName, 
+							"description": applicationDescription,
+							"entityId": entityId,
+							"claims": data.AttributeConsumingServices[0].RequestedAttribute
+							
+						}, (soapRes) => {
+							
+							callback({
+								code: 200,
+								message: "Ok"
+							});
+							
+						}, (errString) => {
+							
+							callback({
+								code: 400,
+								message: errString
+							});	
+						});					
 						
 					}, (errString) => {
 						
@@ -158,7 +167,7 @@ exports.saveSP = function(data, callback) {
 							code: 400,
 							message: errString
 						});	
-					});					
+					});			
 					
 				}, (errString) => {
 					
@@ -166,7 +175,7 @@ exports.saveSP = function(data, callback) {
 						code: 400,
 						message: errString
 					});	
-				});			
+				});	
 				
 			}, (errString) => {
 				
@@ -177,21 +186,20 @@ exports.saveSP = function(data, callback) {
 			});	
 			
 		}, (errString) => {
-			
-			callback({
-				code: 400,
-				message: errString
-			});	
-		});	
-		
+				
+				callback({
+					code: 400,
+					message: errString
+				});	
+			}
+		);
+
 	}, (errString) => {
-			
-			callback({
-				code: 400,
-				message: errString
-			});	
-		}
-	);
+		callback({
+			code: 400,
+			message: errString
+		});	
+	});		
 }
 
 createApplication = function(data, next, nexterr) {
