@@ -19,7 +19,7 @@ exports.saveUser = function(data, callback) {
 		
 		
 		claimsSavedNum = checkLasteAddedUserClaimValue(data.userName, "http://wso2.org/claims/privatePersonalIdentifier", data.claims.idCard, claimsSavedNum, callback);
-		claimsSavedNum = checkLasteAddedUserClaimValue(data.userName, "http://wso2.org/claims/nickname", data.claims.fiscalNumber, claimsSavedNum, callback);
+		claimsSavedNum = checkLasteAddedUserClaimValue(data.userName, "http://wso2.org/claims/nickname", "TINIT-"+data.claims.fiscalNumber, claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(data.userName, "http://wso2.org/claims/mobile", data.claims.mobilePhone, claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(data.userName, "http://wso2.org/claims/dob", data.claims.dateOfBirth, claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(data.userName, "http://wso2.org/claims/stateorprovince", data.claims.countyOfBirth, claimsSavedNum, callback);

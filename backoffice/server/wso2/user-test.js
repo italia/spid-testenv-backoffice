@@ -92,7 +92,7 @@ function importUser(user, callback) {
 		var claimsSavedNum = 0;
 			
 		claimsSavedNum = checkLasteAddedUserClaimValue(user.userName, "http://wso2.org/claims/privatePersonalIdentifier", user.idCard, claimsSavedNum, callback);
-		claimsSavedNum = checkLasteAddedUserClaimValue(user.userName, "http://wso2.org/claims/nickname", user.fiscalNumber, claimsSavedNum, callback);
+		claimsSavedNum = checkLasteAddedUserClaimValue(user.userName, "http://wso2.org/claims/nickname", "TINIT-"+user.fiscalNumber, claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(user.userName, "http://wso2.org/claims/mobile", user.mobilePhone, claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(user.userName, "http://wso2.org/claims/dob", user.dateOfBirth, claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(user.userName, "http://wso2.org/claims/stateorprovince", user.countyOfBirth, claimsSavedNum, callback);
