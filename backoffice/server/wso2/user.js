@@ -17,7 +17,7 @@ exports.saveUser = function(data, callback) {
 		
 		var claimsSavedNum = 0;
 		
-		
+		claimsSavedNum = checkLasteAddedUserClaimValue(data.userName, "http://wso2.org/claims/externalid", "TEST"+generateUID(), claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(data.userName, "http://wso2.org/claims/privatePersonalIdentifier", data.claims.idCard, claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(data.userName, "http://wso2.org/claims/nickname", "TINIT-"+data.claims.fiscalNumber, claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(data.userName, "http://wso2.org/claims/mobile", data.claims.mobilePhone, claimsSavedNum, callback);
@@ -298,7 +298,7 @@ checkLasteAddedUserClaimValue = function(username, claimURI, remoteClaim, savedN
 		claimURI: claimURI,
 		value: remoteClaim
 	}, () => { 
-			if(savedNum==14) {
+			if(savedNum==15) {
 				callback({
 					code: 200,
 					message: "Ok"
@@ -582,4 +582,13 @@ parseFaultString = function(s) {
 		s = "";
 	}
 	return s;
+}
+
+
+generateUID = function() {
+    var firstPart = (Math.random() * 46656) | 0;
+    var secondPart = (Math.random() * 46656) | 0;
+    firstPart = ("00000" + firstPart.toString(36)).slice(-5);
+    secondPart = ("00000" + secondPart.toString(36)).slice(-5);
+    return firstPart + secondPart;
 }

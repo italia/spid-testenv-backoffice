@@ -388,7 +388,7 @@ updateApplication = function(data, next, nexterr) {
 			var claimMappings = [];
 			for(attribute in data.claims) {
 				let localUri = "";
-				if(data.claims[attribute]=="spidCode") localUri = "http://wso2.org/claims/userid";
+				if(data.claims[attribute]=="spidCode") localUri = "http://wso2.org/claims/externalid";
 				if(data.claims[attribute]=="name") localUri = "http://wso2.org/claims/givenname";
 				if(data.claims[attribute]=="familyName") localUri = "http://wso2.org/claims/lastname";
 				if(data.claims[attribute]=="placeOfBirth") localUri = "http://wso2.org/claims/locality";

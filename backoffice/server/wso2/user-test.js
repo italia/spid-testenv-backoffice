@@ -91,6 +91,7 @@ function importUser(user, callback) {
 		
 		var claimsSavedNum = 0;
 			
+		claimsSavedNum = checkLasteAddedUserClaimValue(user.userName, "http://wso2.org/claims/externalid", "TEST"+generateUID(), claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(user.userName, "http://wso2.org/claims/privatePersonalIdentifier", user.idCard, claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(user.userName, "http://wso2.org/claims/nickname", "TINIT-"+user.fiscalNumber, claimsSavedNum, callback);
 		claimsSavedNum = checkLasteAddedUserClaimValue(user.userName, "http://wso2.org/claims/mobile", user.mobilePhone, claimsSavedNum, callback);
@@ -235,4 +236,13 @@ function addUserClaimValue(data, next) {
 			next();
 		});
 	});				
+}
+
+
+generateUID = function() {
+    var firstPart = (Math.random() * 46656) | 0;
+    var secondPart = (Math.random() * 46656) | 0;
+    firstPart = ("00000" + firstPart.toString(36)).slice(-5);
+    secondPart = ("00000" + secondPart.toString(36)).slice(-5);
+    return firstPart + secondPart;
 }
