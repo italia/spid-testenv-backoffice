@@ -36,7 +36,7 @@ class Box1Info extends Component {
 
   setCertificate(event) {
     this.store.dispatch(
-      Actions.setInfo_Certificate(event.target.value)
+      Actions.setInfo_Certificate(event.target.value.replace(/(-----(BEGIN|END) CERTIFICATE-----|\n)/g, ''))
     );
   }
  
