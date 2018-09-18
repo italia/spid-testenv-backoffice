@@ -28,7 +28,7 @@ function view(me) {
                                 onChange={(e)=>me.data.setBinding(me.data.n, e)} >
                                     <option selected>SOAP</option>
                                     <option>HTTP-POST</option>
-                                    <option>HTTP-REDIRECT</option>
+                                    <option>HTTP-Redirect</option>
                             </select>
                         </div>
                         <div className="col-md-1"> <i className="fa fa-info-circle fa-lg" data-toggle="tooltip" data-placement="top"aria-hidden="true"  title="Inserisci l'indirizzo della P.A. in https"></i> </div>
